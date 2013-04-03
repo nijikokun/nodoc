@@ -1,6 +1,8 @@
 # Nodoc
 
-First iteration / version of the nodoc block. Simplifying how to document code for Javascript and other languages if you want.
+> Version 0.2
+
+Simplifying how to document code for Javascript and other languages if you want.
 
 ***
 
@@ -62,26 +64,18 @@ Example: (javascript)
      // returns true
      console.log(equalsIgnoreCase("hello World", "hello world"));
      
-***
-
-### Breakdown
+## Breakdown
 
 ```
 // [Details regarding what method / function does]
 //
-// [Argument details, optional and required.]
-// If you have both optional and required arguments you should denote required parameters like so:
+// [Argument details list]
 //
-// - **`Argument`** `Type` *Information*
-//
-// Otherwise:
-// 
-// - `Argument` `Type` *Information*
-//
-// [Example: (language)]
+// [Example: (language)] - Optional Section
 // [… code indented by four spaces …]
 //
 ```
+
 
 ## Types Enum for Javascript
 
@@ -126,22 +120,22 @@ How to document out an options or `Object` argument on a method or function:
 
 ### Required and Optional
 
-If you have required and optional parameters, the required arguments are to be wrapped with bold markup.
+If you have required and optional parameters, the importance should be wrapped in bold & italics underscore syntax. You can choose either to do this with `Required` or `Optional` and it should like like so: `___Optional___`
+
+***
+
+**Note:** Originally this was meant to be a simple wrapping the argument code snippet with bold syntax, however github does not support bolding inline code snippets.
+
+***
 
 ```
 // … 
-// - **`Argument`** `Type` *Information detailing argument*
+// - `Argument` `Type` ___Required___ *Information detailing argument*
 // - `callback` `Function` *Invoked after a result has been calculated*
 // … 
 ```
 
 #### Outputs
 
-- **`Argument`** `Type` *Information detailing argument*
+- `Argument` `Type` ___Required___ *Information detailing argument*
 - `callback` `Function` *Invoked after a result has been calculated*
-
-## License & Copyright
-
-MIT
-
-2013 Nijiko Yonskai <nijikokun@gmail.com>
