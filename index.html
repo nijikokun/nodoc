@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Nodoc by Nijikokun</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Nodoc</h1>
+        <h2>Easy, Simplified, Documentation Syntax Block Proposal for the JavaScript Language</h2>
+        <a href="https://github.com/Nijikokun/nodoc" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>Nodoc</h1>
+
+<blockquote>
+<p>Version 0.2</p>
+</blockquote>
+
+<p>Simplifying how to document code for Javascript and other languages if you want.</p>
+
+<hr><h3>Basics</h3>
+
+<p>Here is our test code:</p>
+
+<pre><code>function equalsIgnoreCase (a, b) {
+  return (a == b) ? true : (
+    (!b.isEmpty()) &amp;&amp; 
+    (b.length == a.length) &amp;&amp; 
+    (a.toLowerCase() == b.toLowerCase())
+  );
+}
+</code></pre>
+
+<ol>
+<li>Single line comment notation only unless language does not support this notation.</li>
+<li>Markdown is to be assumed as the parsing language.</li>
+</ol><p>An example nodoc block for this would resemble:</p>
+
+<pre><code>// Compares two strings for equality ignoring case sensitivity.
+//
+// - `a` `String` *Value to be compared against.*
+// - `b` `String` *Value used for comparing against.*
+//
+// Example: (javascript)
+//
+//     // returns true
+//     console.log(equalsIgnoreCase("hello World", "hello world"));
+//
+</code></pre>
+
+<h4>Github Flavoured Output</h4>
+
+<p>Compares two strings for equality ignoring case sensitivity.</p>
+
+<ul>
+<li>
+<code>a</code> <code>String</code> <em>Value to be compared against.</em>
+</li>
+<li>
+<code>b</code> <code>String</code> <em>Value used for comparing against.</em>
+</li>
+</ul><p>Example:</p>
+
+<div class="highlight"><pre>     <span class="c1">// returns true</span>
+     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">equalsIgnoreCase</span><span class="p">(</span><span class="s2">"hello World"</span><span class="p">,</span> <span class="s2">"hello world"</span><span class="p">));</span>
+</pre></div>
+
+<h4>Raw Output</h4>
+
+<p>Compares two strings for equality ignoring case sensitivity.</p>
+
+<ul>
+<li>
+<code>a</code> <code>String</code> <em>Value to be compared against.</em>
+</li>
+<li>
+<code>b</code> <code>String</code> <em>Value used for comparing against.</em>
+</li>
+</ul><p>Example: (javascript)</p>
+
+<pre><code> // returns true
+ console.log(equalsIgnoreCase("hello World", "hello world"));
+</code></pre>
+
+<h2>Breakdown</h2>
+
+<pre><code>// [Details regarding what method / function does]
+//
+// [Argument details list]
+//
+// [Example: (language)] - Optional Section
+// [… code indented by four spaces …]
+//
+</code></pre>
+
+<h2>Types Enum for Javascript</h2>
+
+<ul>
+<li>
+<code>Mixed</code> <em>Can be a variety, explain upon necessity.</em>
+</li>
+<li><code>Object</code></li>
+<li><code>Array</code></li>
+<li><code>Function</code></li>
+<li><code>String</code></li>
+<li><code>Number</code></li>
+<li><code>Boolean</code></li>
+<li><code>Date</code></li>
+<li><code>RegExp</code></li>
+<li><code>Null</code></li>
+<li><code>Undefined</code></li>
+<li><code>NaN</code></li>
+</ul><h2>Extra Details</h2>
+
+<h3>Nest Information</h3>
+
+<p>Instead of having argument details and information on the same line, you can nest it below to keep readability a little higher.</p>
+
+<pre><code>// …
+// - `Argument` `Type`
+//   *Information regarding argument can go here*
+// …
+</code></pre>
+
+<h3>Object Argument Information</h3>
+
+<p>How to document out an options or <code>Object</code> argument on a method or function:</p>
+
+<pre><code>// …
+// - `options` `Object` *Information about Options Object*
+//     - `Argument` `Type` *Information details regarding Argument*
+//     - …
+// - `callback` `Function` *Information about Another Argument*
+// …
+</code></pre>
+
+<h3>Required and Optional</h3>
+
+<p>If you have required and optional parameters, the importance should be wrapped in bold &amp; italics underscore syntax. You can choose either to do this with <code>Required</code> or <code>Optional</code> and it should like like so: <code>___Optional___</code></p>
+
+<hr><p><strong>Note:</strong> Originally this was meant to be a simple wrapping the argument code snippet with bold syntax, however github does not support bolding inline code snippets.</p>
+
+<hr><pre><code>// … 
+// - `Argument` `Type` ___Required___ *Information detailing argument*
+// - `callback` `Function` *Invoked after a result has been calculated*
+// … 
+</code></pre>
+
+<h4>Outputs</h4>
+
+<ul>
+<li>
+<code>Argument</code> <code>Type</code> <strong><em>Required</em></strong> <em>Information detailing argument</em>
+</li>
+<li>
+<code>callback</code> <code>Function</code> <em>Invoked after a result has been calculated</em>
+</li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Nijikokun/nodoc/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Nijikokun/nodoc/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Nijikokun/nodoc"></a> is maintained by <a href="https://github.com/Nijikokun">Nijikokun</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
