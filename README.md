@@ -62,6 +62,8 @@ Example: (javascript)
      // returns true
      console.log(equalsIgnoreCase("hello World", "hello world"));
      
+***
+
 ### Breakdown
 
 ```
@@ -81,6 +83,7 @@ Example: (javascript)
 //
 ```
 
+***
 
 ## Types Enum for Javascript
 
@@ -96,6 +99,8 @@ Example: (javascript)
 - `Null`
 - `Undefined`
 - `NaN`
+
+***
 
 ## Extra Details
 
