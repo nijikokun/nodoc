@@ -83,8 +83,6 @@ Example: (javascript)
 //
 ```
 
-***
-
 ## Types Enum for Javascript
 
 - `Mixed` *Can be a variety, explain upon necessity.*
@@ -99,8 +97,6 @@ Example: (javascript)
 - `Null`
 - `Undefined`
 - `NaN`
-
-***
 
 ## Extra Details
 
