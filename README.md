@@ -66,14 +66,19 @@ Example: (javascript)
      
 ## Breakdown
 
+`[]` denotes required, `()` denotes optional
+
 ```
 // [Details regarding what method / function does]
 //
 // [Argument details list]
+// [- `Argument` `Type` (___Priority___) *Information*]
 //
-// [Example: (language)] - Optional Section
-// [… code indented by four spaces …]
+// (Example: (language))
+// (… code indented by four spaces …)
 //
+// (Return: `Type` *Information*)
+// (Key: Value)
 ```
 
 
